@@ -1,6 +1,8 @@
+
+#include "pch.h"
 #include "player.h"
 #include "dealer.h"
-#include <iostream.h>
+#include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
  
@@ -294,7 +296,6 @@ int Dealer::HighestCardInHand(Player& P) {
   return 1;
 }
  
- 
 void Dealer::GetCard(int index,int card[]) {
     Card=card[index];
 }
@@ -303,3 +304,4 @@ void Dealer::DealCard(Player& p, int index) {
     p.playerSuit[index] = Card / 13;
     p.playerValue[index] = Card % 13;
 }
+

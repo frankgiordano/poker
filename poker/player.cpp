@@ -1,5 +1,6 @@
+#include "pch.h"
 #include "player.h"
-#include <iostream.h>
+#include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -31,19 +32,19 @@ void Player::Display() {
     std::cout << std::endl;
     std::cout << "Player " << ID << ": cards are: " << std::endl;
     for (i = 0; i < 5; i++) {
-      if (playerValue[i] == 0)  strcpy(nameOfCard, "two");
-      if (playerValue[i] == 1)  strcpy(nameOfCard, "three");
-      if (playerValue[i] == 2)  strcpy(nameOfCard, "four");
-      if (playerValue[i] == 3)  strcpy(nameOfCard, "five");
-      if (playerValue[i] == 4)  strcpy(nameOfCard, "six");
-      if (playerValue[i] == 5)  strcpy(nameOfCard, "seven");
-      if (playerValue[i] == 6)  strcpy(nameOfCard, "eight");
-      if (playerValue[i] == 7)  strcpy(nameOfCard, "nine");
-      if (playerValue[i] == 8)  strcpy(nameOfCard, "ten");
-      if (playerValue[i] == 9)  strcpy(nameOfCard, "jack");
-      if (playerValue[i] == 10) strcpy(nameOfCard, "queen");
-      if (playerValue[i] == 11) strcpy(nameOfCard, "king");
-      if (playerValue[i] == 12) strcpy(nameOfCard, "ace");
+      if (playerValue[i] == 0)  strcpy_s(nameOfCard, "two");
+      if (playerValue[i] == 1)  strcpy_s(nameOfCard, "three");
+      if (playerValue[i] == 2)  strcpy_s(nameOfCard, "four");
+      if (playerValue[i] == 3)  strcpy_s(nameOfCard, "five");
+      if (playerValue[i] == 4)  strcpy_s(nameOfCard, "six");
+      if (playerValue[i] == 5)  strcpy_s(nameOfCard, "seven");
+      if (playerValue[i] == 6)  strcpy_s(nameOfCard, "eight");
+      if (playerValue[i] == 7)  strcpy_s(nameOfCard, "nine");
+      if (playerValue[i] == 8)  strcpy_s(nameOfCard, "ten");
+      if (playerValue[i] == 9)  strcpy_s(nameOfCard, "jack");
+      if (playerValue[i] == 10) strcpy_s(nameOfCard, "queen");
+      if (playerValue[i] == 11) strcpy_s(nameOfCard, "king");
+      if (playerValue[i] == 12) strcpy_s(nameOfCard, "ace");
       switch (playerSuit[i]) {
         case 0:
            std::cout << "card : " << nameOfCard << " of " << "Clubs" << std::endl;

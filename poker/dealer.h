@@ -1,6 +1,7 @@
 #ifndef dealh
 #define dealh
 class Player;
+
 class Dealer {
     private:
         int Card;

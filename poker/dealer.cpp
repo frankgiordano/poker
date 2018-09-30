@@ -51,8 +51,8 @@ void Dealer::DetermineWinner(Player& P1, Player& P2)
             + P2.itsFlush + P2.itsFourOfAKind + P2.itsStraightFlush;
      if (DrawWinnerP1 > DrawWinnerP2) {
            P1.howManyGamesWon += 1;
-       cout <<"The Winner is "<<"player "<<P1.ID<<"."<<endl;
-       cout <<"Player "<<P1.ID<<" has won "<<P1.howManyGamesWon<<" game(s)."<<endl;
+		   cout <<"The Winner is "<<"player "<<P1.ID<<"."<<endl;
+           cout <<"Player "<<P1.ID<<" has won "<<P1.howManyGamesWon<<" game(s)."<<endl;
            return;
          } else if (DrawWinnerP2 > DrawWinnerP1) {
            P2.howManyGamesWon += 1;

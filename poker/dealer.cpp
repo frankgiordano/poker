@@ -6,42 +6,42 @@
  
 void Dealer::Totals(Player& P1, Player& P2)
 {
-   cout<<endl<<"Total game(s) won by Player "<<P1.ID<<" is "<<P1.howManyGamesWon<<"."<<endl;
-   cout<<"Total game(s) won by Player "<<P2.ID<<" is "<<P2.howManyGamesWon<< "."<<endl;
+   std::cout<<std::endl<<"Total game(s) won by Player "<<P1.ID<<" is "<<P1.howManyGamesWon<<"."<<std::endl;
+   std::cout<<"Total game(s) won by Player "<<P2.ID<<" is "<<P2.howManyGamesWon<< "."<<std::endl;
    if (P1.howManyGamesWon > P2.howManyGamesWon)
-     cout<<"Player "<<P1.ID<<" has won the most game(s)."<<endl;
+     std::cout<<"Player "<<P1.ID<<" has won the most game(s)."<<std::endl;
    else
-     cout<<"Player "<<P2.ID<<" has won the most game(s)."<<endl;
+     std::cout<<"Player "<<P2.ID<<" has won the most game(s)."<<std::endl;
 }
  
 void Dealer::DetermineWinner(Player& P1, Player& P2)
 {
   int DrawWinnerP1, DrawWinnerP2;
  
-  cout << endl;
+  std::cout << std::endl;
   DrawWinnerP1 = DrawWinnerP2 = 0;
   if ((P1.whatRank == 1) && (P2.whatRank == 1)) {
     if (P1.valueHand > P2.valueHand) {
       P1.howManyGamesWon += 1;
-      cout <<"The Winner is "<<"player "<<P1.ID<<"."<<endl;
-      cout <<"Player "<<P1.ID<<" has won "<<P1.howManyGamesWon<<" game(s)."<<endl;
+      std::cout <<"The Winner is "<<"player "<<P1.ID<<"."<<std::endl;
+      std::cout <<"Player "<<P1.ID<<" has won "<<P1.howManyGamesWon<<" game(s)."<<std::endl;
       return;
     }
     else {
       P2.howManyGamesWon += 1;
-      cout <<"The Winner is "<<"player "<<P2.ID<<"."<<endl;
-      cout <<"Player "<<P2.ID<<" has won "<<P2.howManyGamesWon<<" game(s)."<<endl;
+      std::cout <<"The Winner is "<<"player "<<P2.ID<<"."<<std::endl;
+      std::cout <<"Player "<<P2.ID<<" has won "<<P2.howManyGamesWon<<" game(s)."<<std::endl;
       return;
     }
   } else if (P1.whatRank > P2.whatRank) {
        P1.howManyGamesWon += 1;
-       cout <<"The Winner is "<<"player "<<P1.ID<<"."<<endl;
-       cout <<"Player "<<P1.ID<<" has won "<<P1.howManyGamesWon<<" game(s)."<<endl;
+       std::cout <<"The Winner is "<<"player "<<P1.ID<<"."<<std::endl;
+       std::cout <<"Player "<<P1.ID<<" has won "<<P1.howManyGamesWon<<" game(s)."<<std::endl;
        return;
   } else if (P2.whatRank > P1.whatRank) {
        P2.howManyGamesWon += 1;
-       cout <<"The Winner is "<<"player "<<P2.ID<<"."<<endl;
-       cout <<"Player "<<P2.ID<<" has won "<<P2.howManyGamesWon<<" game(s)."<<endl;
+       std::cout <<"The Winner is "<<"player "<<P2.ID<<"."<<std::endl;
+       std::cout <<"Player "<<P2.ID<<" has won "<<P2.howManyGamesWon<<" game(s)."<<std::endl;
        return;
   } else if (P2.whatRank == P1.whatRank) {
      DrawWinnerP1 = P1.itsThreeOfAKind + P1.itsPair1 + P1.itsPair2 + P1.itsStraight
@@ -51,16 +51,16 @@ void Dealer::DetermineWinner(Player& P1, Player& P2)
             + P2.itsFlush + P2.itsFourOfAKind + P2.itsStraightFlush;
      if (DrawWinnerP1 > DrawWinnerP2) {
            P1.howManyGamesWon += 1;
-		   cout <<"The Winner is "<<"player "<<P1.ID<<"."<<endl;
-           cout <<"Player "<<P1.ID<<" has won "<<P1.howManyGamesWon<<" game(s)."<<endl;
+		   std::cout <<"The Winner is "<<"player "<<P1.ID<<"."<<std::endl;
+           std::cout <<"Player "<<P1.ID<<" has won "<<P1.howManyGamesWon<<" game(s)."<<std::endl;
            return;
          } else if (DrawWinnerP2 > DrawWinnerP1) {
            P2.howManyGamesWon += 1;
-           cout <<"The Winner is "<<"player "<<P2.ID<<"."<<endl;
-           cout <<"Player "<<P2.ID<<" has won "<<P2.howManyGamesWon<<" game(s)."<<endl;
+           std::cout <<"The Winner is "<<"player "<<P2.ID<<"."<<std::endl;
+           std::cout <<"Player "<<P2.ID<<" has won "<<P2.howManyGamesWon<<" game(s)."<<std::endl;
            return;
          } else if (DrawWinnerP1 = DrawWinnerP2) {
-           cout <<"This game is a DRAW."<<endl;
+           std::cout <<"This game is a DRAW."<<std::endl;
                return;
          }
    }
@@ -68,45 +68,45 @@ void Dealer::DetermineWinner(Player& P1, Player& P2)
  
 void Dealer::CheckPlayer(Player& P)
 {
-  cout << endl;
+  std::cout << std::endl;
   if (StraightFlush(P) == 1) {
-    cout << "Player " << P.ID << " has a Straight Flush.";
+    std::cout << "Player " << P.ID << " has a Straight Flush.";
     P.whatRank = 9;
     return;
   } else if (FourOfAKind(P) == 1) {
-       cout << "Player " << P.ID << " has a FourOfAKind.";
+       std::cout << "Player " << P.ID << " has a FourOfAKind.";
        P.whatRank = 8;
        return;
   } else if (FullHouse(P) == 1) {
-       cout << "Player " << P.ID << " has a FullHouse.";
+       std::cout << "Player " << P.ID << " has a FullHouse.";
        P.whatRank = 7;
        return;
   } else if (Flush(P) == 1) {
-       cout << "Player " << P.ID << " has a Flush.";
+       std::cout << "Player " << P.ID << " has a Flush.";
        P.whatRank = 6;
        return;
   } else if (Straight(P) == 1) {
-       cout << "Player " << P.ID << " has a Straight.";
+       std::cout << "Player " << P.ID << " has a Straight.";
        P.whatRank = 5;
        return;
   } else if (ThreeOfAKind(P) == 1) {
-       cout << "Player " << P.ID << " has a ThreeOfAKind.";
+       std::cout << "Player " << P.ID << " has a ThreeOfAKind.";
        P.whatRank = 4;
        return;
   } else if (TwoPairsOfCards(P) == 1) {
-       cout << "Player " << P.ID << " has a TwoPairsOfCards.";
+       std::cout << "Player " << P.ID << " has a TwoPairsOfCards.";
        P.whatRank = 3;
        return;
   } else if (OnePairOfCards(P) == 1) {
-       cout << "Player " << P.ID << " has a OnePairOfCards." ;
+       std::cout << "Player " << P.ID << " has a OnePairOfCards." ;
        P.whatRank = 2;
        return;
   } else if (HighestCardInHand(P) == 1) {
-       cout << "Player " << P.ID << " has no combinations.";
+       std::cout << "Player " << P.ID << " has no combinations.";
        P.whatRank = 1;
        return;
   }
-  cout << endl;
+  std::cout << std::endl;
   return;
 }
  

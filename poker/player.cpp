@@ -28,8 +28,8 @@ void Player::Display() {
     int i;
     char nameOfCard[20];
  
-    cout << endl;
-    cout << "Player " << ID << ": cards are: " << endl;
+    std::cout << std::endl;
+    std::cout << "Player " << ID << ": cards are: " << std::endl;
     for (i = 0; i < 5; i++) {
       if (playerValue[i] == 0)  strcpy(nameOfCard, "two");
       if (playerValue[i] == 1)  strcpy(nameOfCard, "three");
@@ -46,19 +46,19 @@ void Player::Display() {
       if (playerValue[i] == 12) strcpy(nameOfCard, "ace");
       switch (playerSuit[i]) {
         case 0:
-           cout << "card : " << nameOfCard << " of " << "Clubs" << endl;
+           std::cout << "card : " << nameOfCard << " of " << "Clubs" << std::endl;
            break;
         case 1:
-           cout << "card : " << nameOfCard << " of " << "Diamonds" << endl;
+           std::cout << "card : " << nameOfCard << " of " << "Diamonds" << std::endl;
            break;
         case 2:
-           cout << "card : " << nameOfCard << " of " << "Hearts" << endl;
+           std::cout << "card : " << nameOfCard << " of " << "Hearts" << std::endl;
            break;
         case 3:
-           cout << "card : " << nameOfCard << " of " << "Spades" << endl;
+           std::cout << "card : " << nameOfCard << " of " << "Spades" << std::endl;
            break;
         default:
-           cout << "wrong suit" << endl;
+           std::cout << "wrong suit" << std::endl;
       }
     }
  
